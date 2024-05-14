@@ -1,0 +1,9 @@
+function meaVal = mea_trans(nodeState,posAnc,dim)
+y = nodeState(1:dim);
+x = nodeState(dim+1:2*dim);
+pk = posAnc;
+s = x - pk; 
+yn = y;
+d = norm(s);
+v = s'*yn/norm(s);  
+meaVal = [d;v];
